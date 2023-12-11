@@ -43,16 +43,16 @@ void Select_Sort(int a[], int n ){
     }
 }
 
-void Insert_Sort( int a[], int n){
+void Insert_Sort( int a[], int n){  // int a[] 是傳入輸入矩陣的位址 不是複製新的矩陣進函式內
     int i, j, up;
-    for(i = 1; i < n; i++){
+    for(i = 1; i < n; i++){         // a[i] 是要整理的元素 (a[0] ~ a[i-1] 已經整理好)
         up = a[i];
-        j = i;
-        while(j > 0 && a[j-1] > up){
-            a[j] = a[j-1];
+        j = i;                      // 記錄空格位置
+        while(j > 0 && a[j-1] > up){// 空格左邊的值比up大
+            a[j] = a[j-1];          // 空格左邊的值往右移一格
             j--;
         }
-        a[j] = up;
+        a[j] = up;                  // up中的值放入最後的空格
 
         for(j = 0; j < n; j++){
             cout << a[j] << " ";
